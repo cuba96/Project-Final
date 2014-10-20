@@ -7,7 +7,7 @@ import org.eet2.era.model.Model;
 
 public class Conocimiento implements Algorithm {
 
-	private static final BigDecimal MAXIMUM = new BigDecimal(200);
+	private static final BigDecimal MAXIMUM = new BigDecimal(2);
 
 	public Result run(Model model) {
 		BigDecimal gplm = model.getValue(KPI.GUSTO_POR_LA_MATERIA);
@@ -38,6 +38,11 @@ public class Conocimiento implements Algorithm {
 		result.addValue("DIDACTICA", didactica.multiply(MAXIMUM));
 		result.setOk(true);
 		
+		System.out.println(conocimiento);
+		System.out.println(gplm);
+		System.out.println(material);
+		System.out.println(tiempoTotal);
+		System.out.println(didactica);
 		return result;
 	}
 
